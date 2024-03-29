@@ -10,13 +10,23 @@ import java.util.List;
 public class TestRunner {
     public static void run(Class<?> testClass) {
         final Object testObj = initTestObj(testClass);
-//        List<Integer> res = new ArrayList<>();
-//        int i = 0;
 
-        for (Field field : testClass.getDeclaredFields()) {
-            System.out.println(field.getAnnotation(Test.class).order());
-        }
-
+//        for (Method method : testClass.getDeclaredMethods()) {
+//            if (method.getAnnotation(Test.class) != null) {
+//                System.out.println(method.getAnnotation(Test.class).order());
+//            }
+//        }
+//        final List<Method> methods = new ArrayList<>();
+//        for (Method method : testClass.getDeclaredMethods()) {
+//            if (method.accessFlags().contains(AccessFlag.PRIVATE)) {
+//                continue;
+//            }
+//            if (method.getAnnotation(Test.class) != null) {
+//                methods.add(method);
+//                System.out.println(method.getAnnotation(Test.class).order());
+//            }
+//        }
+//        methods.sort(Comparator.comparingInt(o -> o.getAnnotation(Test.class).order()));
 
         try {
             for (Method declaredMethod : testClass.getDeclaredMethods()) {
