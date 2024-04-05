@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Seminar003;
 
 import java.sql.*;
 
